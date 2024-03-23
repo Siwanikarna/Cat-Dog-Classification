@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dog & Cat Classification</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<style>
+  body {
+    background: black;
+    color: white;
+  }
+  a {
+    font-size: 20px;
+    margin-top: 300px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: rgb(248, 193, 127);
+
+  }
+</style>
+
+<body>
+
+  <h1 style="margin: auto;width: 80%; text-align: center; margin-top: 20px;  text-transform: uppercase">Cat & Dog
+    Classification</h1>
+  <div style="width: 90%; margin: auto; text-align: center">
+    <img src="{{ url_for('send_file', filename=image_file_name)}}"
+      style="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 10px">
+    <p style="font-style: italic">{{ image_file_name }}</p>
+
+    <h3 style="margin-top: 40px"><b>Predicted Category: <span style="color: rgb(59, 186, 59)">{{ label }}</span></b></h3>
+    <h3><b>Accuracy : <span style="color: rgb(59, 186, 59);">{{ accuracy }} %</span></b></h3>
+    <a href="/"><i class="fa fa-home"></i> Return to Home</a>
+  </div>
+</body>
+
+</html>
